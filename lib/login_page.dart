@@ -17,6 +17,34 @@ class _LoginPageState extends State<LoginPage> {
   final _formKey = GlobalKey<FormState>();
   final usernameController = TextEditingController();
   final passwordController = TextEditingController();
+  late bool isPaswwordInvisible;
+  bool isAgree = false;
+
+  @override
+  void initState() {
+    isPaswwordInvisible = true;
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    usernameController.clear();
+    super.dispose();
+  }
+
+  changeVisibility() {
+    setState(() {
+      isPaswwordInvisible = !isPaswwordInvisible;
+    });
+  }
+
+  changeAgreement() {
+    setState(() {
+      isAgree = !isAgree;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -54,6 +82,22 @@ class _LoginPageState extends State<LoginPage> {
             formKey: _formKey,
             usernameController: usernameController,
             passwordController: passwordController,
+            isPasswordInvisible: isPaswwordInvisible,
+            changePasswordVisibility: changeVisibility,
+          ),
+          Row(
+            children: [
+              Checkbox(
+                value: isAgree,
+                onChanged: (value) {
+                  changeAgreement();
+                },
+              ),
+              Text(
+                'Saya setuju dengan Term and Conditions',
+                style: TextStyle(color: Colors.white),
+              )
+            ],
           ),
           Spacer(),
           ButtonLogin(

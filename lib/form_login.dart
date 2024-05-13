@@ -1,15 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class FormLogin extends StatelessWidget {
   final GlobalKey formKey;
   final TextEditingController usernameController;
   final TextEditingController passwordController;
+  final bool isPasswordInvisible;
+  final Function() changePasswordVisibility;
   const FormLogin(
       {super.key,
       required this.formKey,
       required this.usernameController,
-      required this.passwordController});
+      required this.passwordController,
+      required this.isPasswordInvisible,
+      required this.changePasswordVisibility});
 
   @override
   Widget build(BuildContext context) {
@@ -31,6 +36,7 @@ class FormLogin extends StatelessWidget {
               onChanged: (value) {
                 print(value);
               },
+              style: const TextStyle(color: Colors.white),
               decoration: InputDecoration(
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10.0),
@@ -58,6 +64,8 @@ class FormLogin extends StatelessWidget {
               onChanged: (value) {
                 print(value);
               },
+              obscureText: isPasswordInvisible,
+              style: const TextStyle(color: Colors.white),
               decoration: InputDecoration(
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10.0),
@@ -66,6 +74,14 @@ class FormLogin extends StatelessWidget {
                   padding: const EdgeInsets.all(12),
                   child: SvgPicture.asset('assets/icons/prefix_password.svg',
                       width: 24, height: 24, semanticsLabel: 'Icon Password'),
+                ),
+                suffixIcon: Padding(
+                  padding: EdgeInsets.all(12),
+                  child: GestureDetector(
+                      onTap: () {
+                        changePasswordVisibility();
+                      },
+                      child: const Icon(Icons.visibility)),
                 ),
                 fillColor: Color(0XFF2F2C44),
                 filled: true,

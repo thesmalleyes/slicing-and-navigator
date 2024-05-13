@@ -1,8 +1,19 @@
 import 'package:flutter/material.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   final String id;
   const HomePage({super.key, required this.id});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  @override
+  void dispose() {
+    print('Dispose is running');
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +25,7 @@ class HomePage extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Text('Ini Home dengan id $id'),
+            Text('Ini Home dengan id ${widget.id}'),
             ElevatedButton(
                 onPressed: () {
                   Navigator.pop(context);

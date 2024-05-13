@@ -1,8 +1,5 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:movieapp/home_page.dart';
 
 class ButtonLogin extends StatelessWidget {
   final Size size;
