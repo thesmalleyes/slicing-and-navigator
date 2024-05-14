@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:movieapp/home_page.dart';
-import 'package:movieapp/login_page.dart';
 import 'package:movieapp/routers.dart';
 
 void main() {

@@ -53,8 +53,9 @@ class ButtonLogin extends StatelessWidget {
           // context.go('/test-pop');
           // context.push('/test/123');
         },
-        style: ElevatedButton.styleFrom(backgroundColor: Color(0XFF867AD2)),
-        child: Text(
+        style:
+            ElevatedButton.styleFrom(backgroundColor: const Color(0XFF867AD2)),
+        child: const Text(
           'Login',
           style: TextStyle(color: Colors.white),
         ),

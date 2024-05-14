@@ -1,7 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:movieapp/button_login.dart';
 import 'package:movieapp/form_login.dart';
@@ -70,7 +67,7 @@ class _LoginPageState extends State<LoginPage> {
           Text(
             'Masuk',
             style: GoogleFonts.openSans(
-              color: Color(0XFFFFFFFF),
+              color: const Color(0XFFFFFFFF),
               fontWeight: FontWeight.w700,
               fontSize: 20,
             ),
@@ -93,13 +90,13 @@ class _LoginPageState extends State<LoginPage> {
                   changeAgreement();
                 },
               ),
-              Text(
+              const Text(
                 'Saya setuju dengan Term and Conditions',
                 style: TextStyle(color: Colors.white),
               )
             ],
           ),
-          Spacer(),
+          const Spacer(),
           ButtonLogin(
             size: size,
             usernameController: usernameController,

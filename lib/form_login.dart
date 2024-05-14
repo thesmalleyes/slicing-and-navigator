@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class FormLogin extends StatelessWidget {
@@ -46,11 +45,11 @@ class FormLogin extends StatelessWidget {
                   child: SvgPicture.asset('assets/icons/prefix_username.svg',
                       width: 24, height: 24, semanticsLabel: 'Icon Username'),
                 ),
-                fillColor: Color(0XFF2F2C44),
+                fillColor: const Color(0XFF2F2C44),
                 filled: true,
                 hintText: 'Masukkan Username',
                 label: const Text('Username'),
-                hintStyle: TextStyle(color: Colors.white),
+                hintStyle: const TextStyle(color: Colors.white),
               ),
             ),
           ),
@@ -76,18 +75,18 @@ class FormLogin extends StatelessWidget {
                       width: 24, height: 24, semanticsLabel: 'Icon Password'),
                 ),
                 suffixIcon: Padding(
-                  padding: EdgeInsets.all(12),
+                  padding: const EdgeInsets.all(12),
                   child: GestureDetector(
                       onTap: () {
                         changePasswordVisibility();
                       },
                       child: const Icon(Icons.visibility)),
                 ),
-                fillColor: Color(0XFF2F2C44),
+                fillColor: const Color(0XFF2F2C44),
                 filled: true,
                 hintText: 'Masukkan Password Anda',
                 label: const Text('Password'),
-                hintStyle: TextStyle(color: Colors.white),
+                hintStyle: const TextStyle(color: Colors.white),
               ),
             ),
           ),
